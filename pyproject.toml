@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "txt2dub"
+version = "0.1.0"
+description = "A terminal UI application for editing voiceover scripts and generating text to speech performances."
+authors = ["Mike Kibbel", "Not Your Dad's Math"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+pyttsx3 = "^2.90"
+textual = "^0.23.0"
+
+[tool.poetry.group.dev.dependencies]
+textual-dev = "^0.0.2"
+
+[tool.poetry.scripts]
+txt2dub = "txt2dub.app:run"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

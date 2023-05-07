@@ -1,0 +1,4 @@
+/.venv/
+/.vscode/
+/old/
+__pycache__/
