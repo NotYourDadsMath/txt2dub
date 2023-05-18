@@ -1,4 +1,6 @@
 /.venv/
 /.vscode/
-/old/
+/data/
+/dist/
+/original/
 __pycache__/

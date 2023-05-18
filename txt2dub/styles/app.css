@@ -1,14 +1,345 @@
-App #container {
-    align: center middle;
-    background: $primary-background-darken-2;
+/*************************************
+*
+*   Generics
+*
+**************************************/
+
+.width--auto {
+    min-width: 0;
+    width: auto;
 }
+
+.height--auto {
+    min-height: 0;
+    height: auto;
+}
+
+.margin-left--1 {
+    margin-left: 2;
+}
+
+.margin-top--1 {
+    margin-top: 1;
+}
+
+/*************************************
+*
+*   Widget Customizations
+*
+**************************************/
+
+.container {
+    align: center middle;
+    background: $background;
+}
+
+.scrollable {
+    scrollbar-gutter: stable;
+}
+
+.tree {
+    margin: 1 2;
+    padding: 1 2;
+    background: $boost;
+    border-top: hkey $panel;
+    border-bottom: hkey $panel-darken-1;
+}
+
+.text {
+    layers: text input;
+    width: 1fr;
+    height: 100%;
+    padding: 1 1;
+    background: $surface;
+    align-vertical: middle;
+}
+.text.editing {
+    align-vertical: top;
+}
+
+.text Static {
+    layer: text;
+    padding: 0 3;
+    color: $text;
+}
+.text Input {
+    layer: input;
+    display: none;
+    margin: 4 0 0 0;
+}
+
+.text.editing Static {
+    color: $text 25%;
+
+    align-vertical: top;
+}
+.text.editing Input {
+    display: block;
+}
+
+/*************************************
+*
+*   Logo
+*
+**************************************/
 
 Logo {
     width: auto;
     padding: 4 8;
-    border: thick $secondary;
     content-align: center middle;
     background: $primary;
+    border: thick $secondary;
     color: $secondary;
     text-style: bold;
+}
+
+/*************************************
+*
+*   Toolbars
+*
+**************************************/
+
+.toolbar {
+    background: $boost;
+    border-top: hkey $panel;
+    border-bottom: hkey $panel-darken-1;
+}
+
+.toolbar.horizontal {
+    layout: horizontal;
+    align-horizontal: center;
+    height: auto;
+}
+.toolbar.vertical {
+    layout: vertical;
+    align-vertical: middle;
+    width: auto;
+    padding: 0 1;
+}
+.toolbar.top {
+    dock: top;
+    padding-top: 1;
+    border: none;
+    border-bottom: hkey $panel-darken-1;
+}
+.toolbar.bottom {
+    dock: bottom;
+    padding-bottom: 1;
+    border: none;
+    border-top: hkey $panel;
+}
+
+.toolbar .row {
+    layout: horizontal;
+    align-horizontal: center;
+    width: auto;
+    height: auto;
+    margin: 1 0;
+}
+.toolbar .row.first {
+    margin: 0 0 1 0;
+}
+.toolbar .row.last {
+    margin: 1 0 0 0;
+}
+.toolbar .row.singular {
+    margin: 0;
+}
+
+.toolbar .column {
+    layout: vertical;
+    align-vertical: middle;
+    width: auto;
+    height: auto;
+    margin: 0 2;
+    padding: 0 2;
+}
+.toolbar .column.first {
+    margin: 0 2 0 0;
+}
+.toolbar .column.last {
+    margin: 0 0 0 2;
+}
+.toolbar .column.singular {
+    margin: 0;
+}
+
+.toolbar .row .column {
+    margin: 0;
+    padding: 0;
+}
+
+.toolbar .group {
+    width: auto;
+    height: auto;
+}
+.toolbar .group.left {
+    dock: left;
+}
+.toolbar .group.right {
+    dock: right;
+}
+.toolbar .group.top {
+    dock: top;
+}
+.toolbar .group.bottom {
+    dock: bottom;
+}
+
+.toolbar.horizontal .group {
+    layout: horizontal;
+    margin: 0 4;
+}
+.toolbar.vertical .group {
+    layout: vertical;
+    margin: 2 0;
+    padding: 0 1;
+}
+.toolbar.horizontal .group.left {
+    margin: 0 4 0 1;
+}
+.toolbar.horizontal .group.right {
+    margin: 0 1 0 4;
+}
+
+.toolbar.vertical .group.top {
+    margin: 0 0 2 0;
+}
+.toolbar.vertical .group.bottom {
+    margin: 2 0 0 0;
+}
+
+.toolbar.horizontal .group.singular,
+.toolbar.vertical .group.singular {
+    margin: 0;
+}
+
+.toolbar .control {}
+
+.toolbar Button.control {
+    min-width: 0;
+    min-height: 0;
+    width: auto;
+    height: auto;
+    padding: 0 1;
+}
+
+.toolbar Input.control {
+    width: 22;
+    background: $surface;
+}
+.toolbar Input.control.narrow {
+    width: 10;
+}
+.toolbar Input.control.wide {
+    width: 42;
+}
+
+.toolbar Label.control {
+    height: 100%;
+    content-align: center middle;
+}
+
+.toolbar Select.control {
+    width: 22;
+    background: $surface;
+}
+
+.toolbar.horizontal .control {
+    margin: 0 1;
+}
+.toolbar.vertical .control {
+    margin: 1 0;
+}
+
+.toolbar.horizontal .control.first {
+    margin: 0 1 0 0;
+}
+.toolbar.horizontal .control.last {
+    margin: 0 0 0 1;
+}
+.toolbar.horizontal .control.singular {
+    margin: 0;
+}
+
+.toolbar.vertical .control.first {
+    margin: 0 0 1 0;
+}
+.toolbar.vertical .control.last {
+    margin: 1 0 0 0;
+}
+.toolbar.vertical .control.singular {
+    margin: 0;
+}
+
+
+/*************************************
+*
+*   Scripts
+*
+**************************************/
+
+ScriptLine {
+    layout: horizontal;
+    height: auto;
+    margin: 1 2;
+    padding: 0 2;
+    background: $boost;
+    border-top: hkey $panel;
+    border-bottom: hkey $panel-darken-1;
+}
+
+/* TODO: it would be nice to show a hover state for
+    the whole script line, but the :hover pseudoclass
+    does not apply for children nodes. The Enter and Leave
+    events and the mouse_over reactive attribute follow suit.
+*/
+/*
+ScriptLine:hover {
+    background: $primary 25%;
+    border-top: hkey $accent 25%;
+    border-bottom: hkey $accent-darken-1 25%;
+}
+*/
+
+ScriptLine.selected {
+    background: $primary 50%;
+    border-top: hkey $accent;
+    border-bottom: hkey $accent-darken-1;
+}
+
+
+/*************************************
+*
+*   Screens
+*
+**************************************/
+
+SaveBeforeClosingScreen {
+    align: center middle;
+}
+
+SaveBeforeClosingScreen .grid {
+    box-sizing: content-box;
+    grid-size: 3;
+    grid-gutter: 1 2;
+    padding: 1 4;
+    width: 66;
+    height: 7;
+    background: $boost;
+    border-top: hkey $panel;
+    border-bottom: hkey $panel-darken-1;
+}
+
+SaveBeforeClosingScreen .label {
+    column-span: 3;
+    height: 1fr;
+    width: 1fr;
+    text-align: center;
+    content-align: center middle;
+}
+
+SaveBeforeClosingScreen .control {
+    width: 100%;
+    height: 3;
 }

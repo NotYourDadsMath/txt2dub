@@ -9,7 +9,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.7"
 pyttsx3 = "^2.90"
-textual = "^0.23.0"
+textual = "^0.24.1"
 
 [tool.poetry.group.dev.dependencies]
 textual-dev = "^0.0.2"
