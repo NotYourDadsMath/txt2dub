@@ -1,11 +1,20 @@
 txt2dub
 =======
 
-Write and edit voiceover scripts and generate text-to-speech performances in a text-based user interface.
+A text-based UI application for editing voiceover scripts and generating text to speech performances.
 
 ## What is `txt2dub` for?
 
 `txt2dub` is a video content creation tool for writing scripts and generating overdub performances as MP3 files that can be imported into your video editing software. This supports a workflow for arranging video assets on your timeline based on the voice performance's timing. You can record your own voiceovers to replace the robotic text-to-speech performance, or you can keep the placeholders if that's the style you're targeting.
+
+![Screenshot of txt2dub being used to edit a script with a quote from Frank Herbert's Dune](https://raw.githubusercontent.com/NotYourDadsMath/txt2dub/main/images/txt2dub-editing.png)
+
+
+This is how it looks to edit a script in `txt2dub`. As you type each script line is played aloud by the text-to-speech system. You can play back a line, reorder lines or insert new lines anywhere in the script. You can set the voice performer and the rate of speech for each line in the script. You can undo or redo actions without limit. You can also play back the whole script starting from the selected line.
+
+![Screenshot of txt2dub home screen](https://raw.githubusercontent.com/NotYourDadsMath/txt2dub/main/images/txt2dub-home-screen.png)
+
+And here is the home screen.
 
 ## Who is `txt2dub` for?
 

@@ -127,6 +127,8 @@ Logo {
     padding-bottom: 1;
     border: none;
     border-top: hkey $panel;
+    /* HACK: auto height broke for bottom docked toolbars in textual@0.25.0. */
+    height: 5;
 }
 
 .toolbar .row {
