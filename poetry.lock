@@ -3288,25 +3288,20 @@ files = [
 pywin32 = ">=223"
 
 [[package]]
-name = "pyttsx3"
+name = "pyttsx3-alt"
 version = "2.91"
-description = ""
+description = "Text to Speech (TTS) library for Python 3. Works without internet connection or delay. Supports multiple TTS engines, including Sapi5, nsss, and espeak."
 optional = false
 python-versions = "*"
-files = []
-develop = false
+files = [
+    {file = "pyttsx3_alt-2.91-py3-none-any.whl", hash = "sha256:574281c4797659bbb7e01f9f8c6788e4f9a70244e06aea27b6c614389d0d006e"},
+]
 
 [package.dependencies]
 comtypes = {version = "*", markers = "platform_system == \"Windows\""}
 pyobjc = {version = ">=2.4", markers = "platform_system == \"Darwin\""}
 pypiwin32 = {version = "*", markers = "platform_system == \"Windows\""}
 pywin32 = {version = "*", markers = "platform_system == \"Windows\""}
-
-[package.source]
-type = "git"
-url = "https://github.com/skibblenybbles/pyttsx3"
-reference = "a83dd354bdec4c5011f6d31f887fb5638ec2d7e2"
-resolved_reference = "a83dd354bdec4c5011f6d31f887fb5638ec2d7e2"
 
 [[package]]
 name = "pywin32"
@@ -3520,4 +3515,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.7"
-content-hash = "8493334067de295066833b0144dd4179411296cee8dd02c1c4f554ba538da7f1"
+content-hash = "40a852b11073601f710b193eeb125dc74dccf5e216087b800b676fb140015af0"

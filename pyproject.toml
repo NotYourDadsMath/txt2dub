@@ -11,7 +11,7 @@ readme = "README.md"
 python = "^3.7"
 textual = "^0.26.0"
 pyobjc = {version = "9.0.1", platform = "darwin"}
-pyttsx3 = {git = "https://github.com/skibblenybbles/pyttsx3", rev = "a83dd354bdec4c5011f6d31f887fb5638ec2d7e2"}
+pyttsx3-alt = "^2.91"
 
 [tool.poetry.group.dev.dependencies]
 textual-dev = "^0.0.2"
