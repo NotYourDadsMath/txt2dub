@@ -1,5 +1,6 @@
 import json
 import pathlib
+import platform
 import signal
 import sys
 import tempfile
@@ -116,6 +117,10 @@ class Interpreter(object):
         return "ok"
 
     def generate(self, path, script):
+        ext = (
+            ".aiff"
+                if platform.system() == "Darwin"
+                else ".mp3")
         with zipfile.ZipFile(path, "w") as zf:
             with zf.open("lines.txt", "w") as f:
                 for n, line in enumerate(script["lines"]):
@@ -126,17 +131,20 @@ class Interpreter(object):
                     text = line["text"].strip()
                     if text:
                         f.write(f"{text}\n".encode("utf-8"))
-            with tempfile.TemporaryDirectory() as tmp:
+            with tempfile.TemporaryDirectory() as tmp_dir:
+                batch = []
                 for n, line in enumerate(script["lines"]):
                     text = line["text"].strip()
                     if text:
-                        name = pathlib.Path(f"{n:0>4d}.mp3")
-                        tmp_path = pathlib.Path(tmp) / name
+                        name = pathlib.Path(f"{n:0>4d}{ext}")
+                        tmp = pathlib.Path(tmp_dir) / name
                         self.engine.setProperty("voice", line["voice"]["id"])
                         self.engine.setProperty("rate", line["voice"]["rate"])
-                        self.engine.save_to_file(text, f"{tmp_path}")
-                        self.engine.runAndWait()
-                        with open(tmp_path, "r+b") as t:
-                            with zf.open(f"{name}", "w") as f:
-                                f.write(t.read())
+                        self.engine.save_to_file(text, f"{tmp}")
+                        batch.append((name, tmp))
+                self.engine.runAndWait()
+                for name, tmp in batch:
+                    with open(tmp, "r+b") as t:
+                        with zf.open(f"{name}", "w") as f:
+                            f.write(t.read())
         return "ok"
