@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "txt2dub"
-version = "0.1.2"
+version = "0.1.3"
 homepage = "https://github.com/NotYourDadsMath/txt2dub"
 description = "A text-based UI application for editing voiceover scripts and generating text to speech performances."
 authors = ["Mike Kibbel", "Not Your Dad's Math"]

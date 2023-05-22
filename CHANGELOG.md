@@ -42,3 +42,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Bumped textual dependency to 0.26.0
 - Pinned pyobjc dependency to downgraded 9.0.1 (Darwin only)
+
+
+## [0.1.3] - 2023-05-22
+
+### Fixed
+
+- Invalid PyPi dependency (pyttsx3 fork on GitHub)
+
+### Changed
+
+- Replaced pyttsx3 with pyttsx3-alt (a PyPi published fork with the bugfixes for #1)
