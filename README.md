@@ -44,4 +44,4 @@ This project doesn't require a subscription, a new account or payment. It's enti
 
 ## Is `txt2dub` ready for production use?
 
-It has been used successfully for production work by the project's author in Windows 10. Testing on Mac will proceed in the near future. Linux testing will be community-driven. Please report issues with details about your OS (Windows, Mac, Linux + version) and Python environment (version) if you encounter bugs.
+It has been used successfully for production work by the project's author in Windows 10 and macOS Monterey. Testing on Mac will proceed in the near future. Linux testing will be community-driven. Please report issues with details about your OS (Windows, Mac, Linux + version) and Python environment (version) if you encounter bugs.
